@@ -1,0 +1,15 @@
+syntax = "proto3";
+package imagexample;
+
+message ImageRequest {
+  string url = 1;
+}
+
+message ImageResponse {
+    string captcha = 1;
+    string language = 2;
+}
+
+service ImageCaptchaService {
+  rpc ResolveCaptcha (ImageRequest) returns (ImageResponse) {}
+}
